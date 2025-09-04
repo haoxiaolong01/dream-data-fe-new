@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+html, body,
+body span,
+body div,
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body input,
+body textarea,
+body a {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  /* Chrome, Safari and Opera */
+}
+
+/* 覆盖主题按钮颜色 */
+.btn-primary {
+  background: #ff8e00;
+  border: 0 none;
+}
+.btn-primary:hover {
+  background: #ffa629;
+}
+.btn-primary.btn-outline {
+  background: transparent;
+  color: #ff8e00;
+  border: 2px solid #ff8e00;
+}
+.btn-primary.btn-outline:hover {
+  color: #ffa629;
+  border: 2px solid #ffa629;
+}
+.btn-link {
+    text-decoration: none;
+}
