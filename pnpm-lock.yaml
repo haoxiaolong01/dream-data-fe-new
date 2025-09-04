@@ -14,6 +14,9 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.21
     version: 10.4.21(postcss@8.5.6)
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   daisyui:
     specifier: ^5.1.6
     version: 5.1.6
@@ -37,6 +40,9 @@ dependencies:
     version: 13.15.15
 
 devDependencies:
+  '@types/classnames':
+    specifier: ^2.3.1
+    version: 2.3.4
   '@types/react':
     specifier: ^18.0.33
     version: 18.3.24
@@ -1791,6 +1797,13 @@ packages:
       '@babel/types': 7.28.2
     dev: false
 
+  /@types/classnames@2.3.4:
+    resolution: {integrity: sha512-dwmfrMMQb9ujX1uYGvB5ERDlOzBNywnZAZBtOe107/hORWP05ESgU4QyaanZMWYYfd2BzrG78y13/Bju8IQcMQ==, tarball: https://registry.npmjs.org/@types/classnames/-/classnames-2.3.4.tgz}
+    deprecated: This is a stub types definition. classnames provides its own type definitions, so you do not need this installed.
+    dependencies:
+      classnames: 2.5.1
+    dev: true
+
   /@types/eslint-scope@3.7.7:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==, tarball: https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-3.7.7.tgz}
     dependencies:
@@ -3502,6 +3515,9 @@ packages:
       inherits: 2.0.4
       safe-buffer: 5.2.1
     dev: false
+
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==, tarball: https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz}
 
   /clean-css@5.3.3:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==, tarball: https://registry.npmjs.org/clean-css/-/clean-css-5.3.3.tgz}

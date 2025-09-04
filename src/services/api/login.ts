@@ -1,6 +1,7 @@
 // @ts-ignore
 /* eslint-disable */
 import request from "umi-request";
+import { env } from '../env';
 
 /** 发送验证码 POST /api/login/captcha */
 export async function getFakeCaptcha(
@@ -11,7 +12,7 @@ export async function getFakeCaptcha(
   },
   options?: { [key: string]: any }
 ) {
-  return request<API.FakeCaptcha>("/api/login/captcha", {
+  return request<API.FakeCaptcha>(`${env.API_BASE_URL}/login/captcha`, {
     method: "GET",
     params: {
       ...params,
