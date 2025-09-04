@@ -1,33 +1,32 @@
-import React from 'react';
-import { useLocale } from '../contexts/LocaleContext';
+import React from "react";
+import { useLocale } from "../contexts/LocaleContext";
 
 const LanguageSwitcher: React.FC = () => {
   const { locale, setLocale } = useLocale();
 
-  const handleLanguageChange = (newLocale: 'zh-CN' | 'en-US') => {
+  const handleLanguageChange = (newLocale: "zh-CN" | "en-US") => {
     setLocale(newLocale);
   };
 
   return (
     <div className="flex items-center space-x-2">
-      <span className="text-sm text-gray-600">语言:</span>
       <div className="flex bg-gray-100 rounded-lg p-1">
         <button
-          onClick={() => handleLanguageChange('zh-CN')}
+          onClick={() => handleLanguageChange("zh-CN")}
           className={`px-3 py-1 text-sm rounded-md transition-colors ${
-            locale === 'zh-CN'
-              ? 'bg-blue-500 text-white'
-              : 'text-gray-600 hover:bg-gray-200'
+            locale === "zh-CN"
+              ? "bg-blue-500 text-white"
+              : "text-gray-600 hover:bg-gray-200"
           }`}
         >
           中文
         </button>
         <button
-          onClick={() => handleLanguageChange('en-US')}
+          onClick={() => handleLanguageChange("en-US")}
           className={`px-3 py-1 text-sm rounded-md transition-colors ${
-            locale === 'en-US'
-              ? 'bg-blue-500 text-white'
-              : 'text-gray-600 hover:bg-gray-200'
+            locale === "en-US"
+              ? "bg-blue-500 text-white"
+              : "text-gray-600 hover:bg-gray-200"
           }`}
         >
           English

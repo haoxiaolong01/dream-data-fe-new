@@ -1,104 +1,35 @@
-.gradient-bg {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7b2d8e 100%);
-}
-
-.login-card {
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(135deg, rgba(45, 55, 72, 0.95) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(55, 48, 107, 0.95) 100%);
+/* 登录页面基础样式 */
+.floating-elements::before,
+.floating-elements::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
 }
 
 .floating-elements::before {
-  content: '';
-  position: absolute;
   top: 10%;
   left: 5%;
   width: 100px;
   height: 100px;
   background: rgba(255, 107, 0, 0.1);
-  border-radius: 50%;
-  filter: blur(40px);
-  animation: float 6s ease-in-out infinite;
 }
 
 .floating-elements::after {
-  content: '';
-  position: absolute;
   bottom: 20%;
   right: 10%;
   width: 150px;
   height: 150px;
   background: rgba(123, 45, 142, 0.1);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 .text-glow {
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.card-glow {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
-}
-
 .feature-card {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.logo-glow {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-.input-field {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: white;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.input-field:focus {
-  outline: none;
-  border-color: #ff8e00;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
-  background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
-}
-
-.input-field::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.divider-line {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-}
-
-.divider-text {
-  background: linear-gradient(135deg, rgba(45, 55, 72, 0.95) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(55, 48, 107, 0.95) 100%);
-  color: rgba(255, 255, 255, 0.6);
-  padding: 0 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .tip-card {

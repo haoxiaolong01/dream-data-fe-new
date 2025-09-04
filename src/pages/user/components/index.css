@@ -1,9 +1,0 @@
-
-
-.input-focus:focus {
-    /* border-color: #14b8a6;
-    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1); */
-}
-.email-input input::placeholder {
-    color: #94a3b8;
-}

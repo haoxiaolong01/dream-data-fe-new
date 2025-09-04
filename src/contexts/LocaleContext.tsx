@@ -19,7 +19,7 @@ const messages = {
 };
 
 export const LocaleProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [locale, setLocale] = useState<Locale>('zh-CN');
+  const [locale, setLocale] = useState<Locale>('en-US');
 
   const value: LocaleContextType = {
     locale,
