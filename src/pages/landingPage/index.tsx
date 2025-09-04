@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "umi";
 import { Icon } from "@iconify/react";
+import { useLocale } from "@/contexts/LocaleContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 // 临时定义缺失的类型
 interface EventItem {
   cover?: string;
@@ -38,44 +40,44 @@ import LinkTemplate from "@/components/LinkTemplate";
 const tabList = [
   {
     key: "recent",
-    tab: "Recent Events",
+    tabKey: "landingPage.tab.recent",
   },
   {
     key: "ip",
-    tab: "IP Popularity / Ranking",
+    tabKey: "landingPage.tab.ip",
   },
   {
     key: "upcoming",
-    tab: "Upcoming Events",
+    tabKey: "landingPage.tab.upcoming",
   },
 ];
 
 // 功能卡片数据
 const featuresData = [
   {
-    title: "IP Matching",
-    description: "Find your ideal collaboration partner",
+    titleKey: "landingPage.feature.ipMatching.title",
+    descriptionKey: "landingPage.feature.ipMatching.desc",
     imageSrc: get1,
     imageAlt: "IP Matching",
     animationDelay: undefined,
   },
   {
-    title: "Event Discovery",
-    description: "Stay on top of industry happenings",
+    titleKey: "landingPage.feature.eventDiscovery.title",
+    descriptionKey: "landingPage.feature.eventDiscovery.desc",
     imageSrc: get2,
     imageAlt: "Event Discovery",
     animationDelay: "0.1s",
   },
   {
-    title: "IP Rankings",
-    description: "Track popularity trends",
+    titleKey: "landingPage.feature.ipRankings.title",
+    descriptionKey: "landingPage.feature.ipRankings.desc",
     imageSrc: get3,
     imageAlt: "IP Rankings",
     animationDelay: "0.2s",
   },
   {
-    title: "Partner Insights",
-    description: "Learn more about potential collaborators",
+    titleKey: "landingPage.feature.partnerInsights.title",
+    descriptionKey: "landingPage.feature.partnerInsights.desc",
     imageSrc: get4,
     imageAlt: "Partner Insights",
     animationDelay: "0.3s",
@@ -84,6 +86,7 @@ const featuresData = [
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const { messages } = useLocale();
 
   // 模拟 events 数据
 
@@ -117,19 +120,20 @@ const LandingPage: React.FC = () => {
               <img src={logo} alt="logo" className="w-24" />
               <div className="flex space-x-8">
                 <div
-                  className="text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
-                  onClick={toLogin}
-                >
-                  Events
-                </div>
+              className="text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
+              onClick={toLogin}
+            >
+              {messages['landingPage.header.events']}
+            </div>
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
               <button
                 className="font-medium h-[36px] bg-orange-500 hover:bg-orange-600 text-white px-4 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                LOG IN{" "}
+                {messages['landingPage.header.login']}
                 <Icon
                   icon="lucide:arrow-right-to-bracket"
                   className="inline-block ml-2 w-4 h-4"
@@ -153,7 +157,7 @@ const LandingPage: React.FC = () => {
           style={{ transform: "translateY(50px)" }}
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
-            Your global hub for IP collaboration and events
+            {messages['landingPage.hero.title']}
           </h1>
 
           <div className="mt-12 animate-fadeInUp animate-float flex justify-center">
@@ -171,7 +175,7 @@ const LandingPage: React.FC = () => {
                 }}
               />
               <span className="text-gray-400">
-                Search events, IPs, or partners
+                {messages['landingPage.hero.searchPlaceholder']}
               </span>
             </div>
           </div>
@@ -193,7 +197,7 @@ const LandingPage: React.FC = () => {
                 toLogin();
               }}
             >
-              {item.tab}
+              {messages[item.tabKey]}
             </div>
           ))}
         </div>
@@ -214,7 +218,7 @@ const LandingPage: React.FC = () => {
               className="font-medium h-[46px] bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-md transition-colors"
               onClick={toLogin}
             >
-              VIEW ALL EVENTS{" "}
+              {messages['landingPage.viewAllEvents']}
               <Icon
                 icon="lucide:arrow-right"
                 className="inline-block ml-2 w-4 h-4"
@@ -227,15 +231,15 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16 animate-fadeInUp">
-            What you get
+            {messages['landingPage.whatYouGet']}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuresData.map((feature, index) => (
               <FeatureCard
                 key={index}
-                title={feature.title}
-                description={feature.description}
+                title={messages[feature.titleKey]}
+                description={messages[feature.descriptionKey]}
                 imageSrc={feature.imageSrc}
                 imageAlt={feature.imageAlt}
                 animationDelay={feature.animationDelay}
@@ -257,17 +261,16 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fadeInUp">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Discover events. Connect with partners. Grow your IP.
+                {messages['landingPage.cta.title']}
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Find upcoming events, explore trending IPs, and connect with the
-                right partners — all in one place.
+                {messages['landingPage.cta.subtitle']}
               </p>
               <button
                 className="font-medium h-[64px] bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                GET STARTED{" "}
+                {messages['landingPage.cta.getStarted']}
                 <Icon
                   icon="lucide:arrow-right"
                   className="inline-block ml-2 w-4 h-4"
@@ -302,15 +305,15 @@ const LandingPage: React.FC = () => {
               <img src={logoWhite} alt="logo" className="w-24" />
             </div>
             <p className="text-white font-medium mb-8">
-              Global hub for IP collaboration and events
-            </p>
+                {messages['landingPage.footer.tagline']}
+              </p>
 
             <div className="flex justify-center space-x-4 mb-8">
               <button
                 className="font-medium h-[36px] bg-orange-500 hover:bg-orange-600 text-white px-4 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                LOG IN{" "}
+                {messages['landingPage.header.login']}
                 <Icon
                   icon="lucide:arrow-right-to-bracket"
                   className="inline-block ml-2 w-4 h-4"
@@ -321,7 +324,7 @@ const LandingPage: React.FC = () => {
 
           <div className="pt-8">
             <div className="text-center text-gray-500">
-              <p>© IPverse Co. 2024 | All rights reserved</p>
+              <p>{messages['landingPage.footer.copyright']}</p>
             </div>
           </div>
         </div>
