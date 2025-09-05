@@ -28,6 +28,7 @@ import get4 from "@/assets/images/get4.jpg";
 import bg1 from "@/assets/images/bg1.jpg";
 import bg2 from "@/assets/images/bg2.jpg";
 import bg3 from "@/assets/images/bg3.jpg";
+import card from "@/assets/images/card.png";
 
 import EventCard from "./components/EventCard";
 import FeatureCard from "./components/FeatureCard";
@@ -120,11 +121,11 @@ const LandingPage: React.FC = () => {
               <img src={logo} alt="logo" className="w-24" />
               <div className="flex space-x-8">
                 <div
-              className="text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
-              onClick={toLogin}
-            >
-              {messages['landingPage.header.events']}
-            </div>
+                  className="text-gray-700 hover:text-gray-900 transition-colors cursor-pointer"
+                  onClick={toLogin}
+                >
+                  {messages["landingPage.header.events"]}
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -133,7 +134,7 @@ const LandingPage: React.FC = () => {
                 className="font-medium h-[36px] bg-orange-500 hover:bg-orange-600 text-white px-4 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                {messages['landingPage.header.login']}
+                {messages["landingPage.header.login"]}
                 <Icon
                   icon="lucide:arrow-right-to-bracket"
                   className="inline-block ml-2 w-4 h-4"
@@ -157,7 +158,7 @@ const LandingPage: React.FC = () => {
           style={{ transform: "translateY(50px)" }}
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
-            {messages['landingPage.hero.title']}
+            {messages["landingPage.hero.title"]}
           </h1>
 
           <div className="mt-12 animate-fadeInUp animate-float flex justify-center">
@@ -175,7 +176,7 @@ const LandingPage: React.FC = () => {
                 }}
               />
               <span className="text-gray-400">
-                {messages['landingPage.hero.searchPlaceholder']}
+                {messages["landingPage.hero.searchPlaceholder"]}
               </span>
             </div>
           </div>
@@ -218,7 +219,7 @@ const LandingPage: React.FC = () => {
               className="font-medium h-[46px] bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-md transition-colors"
               onClick={toLogin}
             >
-              {messages['landingPage.viewAllEvents']}
+              {messages["landingPage.viewAllEvents"]}
               <Icon
                 icon="lucide:arrow-right"
                 className="inline-block ml-2 w-4 h-4"
@@ -231,7 +232,7 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16 animate-fadeInUp">
-            {messages['landingPage.whatYouGet']}
+            {messages["landingPage.whatYouGet"]}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -261,16 +262,16 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fadeInUp">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                {messages['landingPage.cta.title']}
+                {messages["landingPage.cta.title"]}
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                {messages['landingPage.cta.subtitle']}
+                {messages["landingPage.cta.subtitle"]}
               </p>
               <button
                 className="font-medium h-[64px] bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                {messages['landingPage.cta.getStarted']}
+                {messages["landingPage.cta.getStarted"]}
                 <Icon
                   icon="lucide:arrow-right"
                   className="inline-block ml-2 w-4 h-4"
@@ -282,9 +283,9 @@ const LandingPage: React.FC = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <img
-                src="https://picsum.photos/600/400?random=11"
+                src={card}
                 alt="Platform Preview"
-                className="rounded-xl shadow-2xl"
+                className="h-[400px] rounded-xl shadow-2xl"
               />
             </div>
           </div>
@@ -305,15 +306,15 @@ const LandingPage: React.FC = () => {
               <img src={logoWhite} alt="logo" className="w-24" />
             </div>
             <p className="text-white font-medium mb-8">
-                {messages['landingPage.footer.tagline']}
-              </p>
+              {messages["landingPage.footer.tagline"]}
+            </p>
 
             <div className="flex justify-center space-x-4 mb-8">
               <button
                 className="font-medium h-[36px] bg-orange-500 hover:bg-orange-600 text-white px-4 rounded-md transition-colors"
                 onClick={toLogin}
               >
-                {messages['landingPage.header.login']}
+                {messages["landingPage.header.login"]}
                 <Icon
                   icon="lucide:arrow-right-to-bracket"
                   className="inline-block ml-2 w-4 h-4"
@@ -324,7 +325,7 @@ const LandingPage: React.FC = () => {
 
           <div className="pt-8">
             <div className="text-center text-gray-500">
-              <p>{messages['landingPage.footer.copyright']}</p>
+              <p>{messages["landingPage.footer.copyright"]}</p>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { useRequest } from "ahooks";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "umi";
 import validator from "validator";
-import { useIntl } from 'react-intl';
+import { useIntl } from "react-intl";
 // import Settings from "../../../../config/defaultSettings";
 
 const LoginView: React.FC = () => {
@@ -87,7 +87,7 @@ const LoginView: React.FC = () => {
       {sendSuccess ? (
         <div className="backdrop-blur-sm rounded-2xl max-w-md w-full text-center">
           <div className="text-white text-xl font-semibold mb-4">
-            {intl.formatMessage({ id: 'login.sentLink.title' })}
+            {intl.formatMessage({ id: "login.sentLink.title" })}
           </div>
 
           <div className="text-white text-lg font-medium mb-6 bg-slate-700/50 rounded-lg py-3 px-4">
@@ -96,13 +96,15 @@ const LoginView: React.FC = () => {
 
           <div className="mb-6">
             <div className="text-slate-300 text-sm mb-1">
-              {intl.formatMessage({ id: 'login.sentLink.notReceived' })}
-                <button
-                  aria-label={intl.formatMessage({ id: 'login.sentLink.resendBtn' })}
-                  className="btn btn-link text-blue-400 hover:text-blue-300 transition-colors px-1"
-                  onClick={handleSubmit}
-                  disabled={loading}
-                >
+              {intl.formatMessage({ id: "login.sentLink.notReceived" })}
+              <button
+                aria-label={intl.formatMessage({
+                  id: "login.sentLink.resendBtn",
+                })}
+                className="btn btn-link text-blue-400 hover:text-blue-300 transition-colors px-1"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
                 {loading ? (
                   <span className="loading loading-spinner loading-xs"></span>
                 ) : (
@@ -114,10 +116,10 @@ const LoginView: React.FC = () => {
 
           <div className="bg-slate-700/30 rounded-lg p-4 mb-6">
             <div className="text-slate-400 text-xs leading-relaxed mb-3">
-              {intl.formatMessage({ id: 'login.sentLink.checkSpam' })}
+              {intl.formatMessage({ id: "login.sentLink.checkSpam" })}
             </div>
             <div className="text-slate-400 text-xs">
-              {intl.formatMessage({ id: 'login.sentLink.needHelp' })}
+              {intl.formatMessage({ id: "login.sentLink.needHelp" })}
               <button
                 className="btn btn-link text-blue-400 hover:text-blue-300 transition-colors px-1"
                 onClick={() => {
@@ -126,7 +128,7 @@ const LoginView: React.FC = () => {
                   );
                 }}
               >
-                {intl.formatMessage({ id: 'login.form.contactSupport' })}
+                {intl.formatMessage({ id: "login.form.contactSupport" })}
               </button>
             </div>
           </div>
@@ -135,7 +137,7 @@ const LoginView: React.FC = () => {
         <>
           <div className="text-center">
             <div className="text-2xl font-bold text-white">
-              {intl.formatMessage({ id: 'login.form.title' })}
+              {intl.formatMessage({ id: "login.form.title" })}
             </div>
           </div>
 
@@ -147,8 +149,8 @@ const LoginView: React.FC = () => {
               />
               <div>
                 <div className="text-slate-300 text-sm">
-                {intl.formatMessage({ id: 'login.tip.message' })}
-              </div>
+                  {intl.formatMessage({ id: "login.tip.message" })}
+                </div>
               </div>
             </div>
           </div>
@@ -162,7 +164,9 @@ const LoginView: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={intl.formatMessage({ id: 'login.form.emailPlaceholder' })}
+                  placeholder={intl.formatMessage({
+                    id: "login.form.emailPlaceholder",
+                  })}
                   className="input input-bordered w-full bg-slate-700 border-slate-600 text-white placeholder-slate-500 pl-10"
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 z-10">
@@ -178,12 +182,12 @@ const LoginView: React.FC = () => {
               {loading ? (
                 <span className="loading loading-spinner loading-sm"></span>
               ) : (
-                intl.formatMessage({ id: 'login.form.sendLink' })
+                intl.formatMessage({ id: "login.form.sendLink" })
               )}
             </button>
 
             <div className="text-center text-sm text-slate-400 mt-6">
-              {intl.formatMessage({ id: 'login.form.trouble' })}
+              {intl.formatMessage({ id: "login.form.trouble" })}
               <button
                 className="btn btn-link px-1 h-5"
                 onClick={() => {
@@ -192,7 +196,7 @@ const LoginView: React.FC = () => {
                   );
                 }}
               >
-                {intl.formatMessage({ id: 'login.form.contactSupport' })}
+                {intl.formatMessage({ id: "login.form.contactSupport" })}
               </button>
             </div>
 
@@ -202,7 +206,7 @@ const LoginView: React.FC = () => {
                 style={{ borderTopStyle: "solid" }}
               ></div>
               <span className="flex-shrink mx-4 text-slate-500 text-sm">
-                {intl.formatMessage({ id: 'login.form.or' })}
+                {intl.formatMessage({ id: "login.form.or" })}
               </span>
               <div
                 className="flex-grow border-t border-slate-700"
@@ -216,7 +220,7 @@ const LoginView: React.FC = () => {
                 if (callbackUrl) {
                   url = url + "?callback_url=" + callbackUrl;
                 }
-                const ssoUrl = `${process.env.REACT_APP_API_SSO_URL || "https://sso.yodo1.com/login?redirect="}${encodeURIComponent(url)}`;
+                const ssoUrl = `https://sso.yodo1.me/auth?callback_url=${encodeURIComponent(url)}`;
 
                 window.location.href = ssoUrl;
               }}
@@ -224,7 +228,7 @@ const LoginView: React.FC = () => {
               <svg className="w-5 h-5" viewBox="0 0 23 23" fill="currentColor">
                 <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z" />
               </svg>
-              {intl.formatMessage({ id: 'login.form.ssoLogin' })}
+              {intl.formatMessage({ id: "login.form.ssoLogin" })}
             </button>
           </div>
         </>
