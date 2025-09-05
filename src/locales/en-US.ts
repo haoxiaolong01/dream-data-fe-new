@@ -78,6 +78,14 @@ export default {
   'magicLink.toast.invalid': 'Invalid link',
   'magicLink.toLoginBtn': 'To Login',
   
+  // API error messages
+  'api.error.unauthorized': 'Your session has expired, please log in again',
+  'api.error.badRequest': 'Bad request parameters',
+  'api.error.notFound': 'Requested resource not found',
+  'api.error.serverError': 'Server internal error',
+  'api.error.networkError': 'Network connection error, please check your network settings',
+  'api.error.unknown': 'Unknown error occurred, please try again later',
+  
   // App translations
   'app.title': 'IPVerse.ai',
   'app.copyright': '© Powered by Yodo1',

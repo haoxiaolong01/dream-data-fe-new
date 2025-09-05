@@ -78,6 +78,14 @@ export default {
   'magicLink.toast.invalid': '无效链接',
   'magicLink.toLoginBtn': '前往登录',
   
+  // API错误提示
+  'api.error.unauthorized': '您的会话已过期，请重新登录',
+  'api.error.badRequest': '请求参数错误',
+  'api.error.notFound': '请求的资源不存在',
+  'api.error.serverError': '服务器内部错误',
+  'api.error.networkError': '网络连接错误，请检查您的网络设置',
+  'api.error.unknown': '发生未知错误，请稍后再试',
+  
   // 应用翻译
   'app.title': 'IPVerse.ai',
   'app.copyright': '© 由 Yodo1 提供支持',

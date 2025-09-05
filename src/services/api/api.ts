@@ -133,10 +133,7 @@ export async function submitUserinfoApi(data: {
   });
 }
 export async function getLandingPageEventsApi() {
-  return request<any>(
-    env.API_BASE_URL + "/api/collab/get-landing-page-events",
-    {
-      method: "GET",
-    }
-  );
+  return request<any>(env.API_BASE_URL + "/collab/get-landing-page-events", {
+    method: "GET",
+  });
 }
