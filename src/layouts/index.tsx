@@ -46,6 +46,14 @@ export default function Layout() {
             </Link>
           </li>
           <li>
+            <Link
+              to="/events"
+              className="hover:text-blue-600 transition-colors"
+            >
+              {intl.formatMessage({ id: "nav.events" })}
+            </Link>
+          </li>
+          <li>
             <a
               href="https://github.com/umijs/umi"
               className="hover:text-blue-600 transition-colors"

@@ -26,6 +26,10 @@ export default defineConfig({
       layout: false,
       component: "user/magicLink",
     },
+    {
+      path: "/events",
+      component: "events",
+    },
   ],
   npmClient: "pnpm",
 });

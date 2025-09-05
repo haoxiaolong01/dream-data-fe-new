@@ -2,6 +2,9 @@ export default {
   'language.zh': '中文',
   'language.en': 'English',
   
+  // Navigation translations
+  'nav.events': 'Events',
+  
   // Login page translations
   'login.hero.title1': 'Your global hub for',
   'login.hero.title2': 'IP collaboration',

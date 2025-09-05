@@ -2,6 +2,9 @@ export default {
   'language.zh': '中文',
   'language.en': 'English',
   
+  // 导航翻译
+  'nav.events': '活动',
+  
   // 登录页面翻译
   'login.hero.title1': '您的全球',
   'login.hero.title2': 'IP 合作',
